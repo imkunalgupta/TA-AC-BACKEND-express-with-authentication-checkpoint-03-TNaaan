@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="flex justify-content align-items container">
+        <ul class="flex">
+          <li>
+            <a href="/">Home</a>
+          </li>
+        </ul>
+        <ul class="flex nav">
+          <li>
+            <a href="/">Login</a>
+          </li>
+          <li>
+            <a href="/register">Register</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <h1>Welcome to expense app</h1>
+      <div class="login">
+        <form action="/" method="post">
+          <label for="email"><b>Email</b></label>
+          <input
+            type="text"
+            placeholder="Enter Email"
+            name="email"
+            id="email"
+          />
+          <label for="password"><b>Password</b></label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="password"
+            id="password"
+          />
+          <button type="submit" class="loginbtn">Login</button>
+          <button><a href="/auth/github">Github</a></button>
+          <button><a href="/auth/google">Google</a></button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

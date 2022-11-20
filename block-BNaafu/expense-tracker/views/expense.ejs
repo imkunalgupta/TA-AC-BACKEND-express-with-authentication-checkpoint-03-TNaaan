@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="flex justify-content align-item">
+        <ul class="flex expenses">
+          <li>
+            <a href="/dashboard/expense">Add Expenses</a>
+          </li>
+          <li>
+            <a href="/dashboard/income">Add Income</a>
+          </li>
+          <li>
+            <a href="/dashboard">Dashboard</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/dashboard/logout">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <h1>Welcome to Expense.</h1>
+      <fieldset>
+        <form action="/dashboard/expense" method="post">
+          <input
+            type="text"
+            name="category"
+            id=""
+            placeholder="Enter the source of expense"
+          />
+          <input type="number" name="amount" id="" placeholder="Enter amount" />
+          <input type="date" name="date" id="" placeholder="Enter Date" />
+          <input type="submit" value="Submit" />
+        </form>
+      </fieldset>
+    </main>
+  </body>
+</html>
