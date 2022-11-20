@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="container">
+        <ul class="flex justify-content align-items">
+          <li>
+            <a href="/">Login</a>
+          </li>
+          <li>
+            <a href="/register">Register</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <h1>Welcome to Register Page</h1>
+      <div class="register">
+        <form action="/register" method="post">
+          <label for="name"><b>First Name</b></label>
+          <input
+            type="text"
+            placeholder="Enter First Name"
+            name="firstname"
+            id="firstname"
+          />
+
+          <label for="name"><b>Last Name</b></label>
+          <input
+            type="text"
+            placeholder="Enter Last Name"
+            name="lastname"
+            id="lastname"
+          />
+
+          <label for="email"><b>Email</b></label>
+          <input
+            type="text"
+            placeholder="Enter Email"
+            name="email"
+            id="email"
+          />
+          <label for="age"><b>Age</b></label>
+          <input type="number" placeholder="Enter Age" name="age" id="age" />
+          <label for="phone"><b>Phone</b></label>
+          <input
+            type="number"
+            placeholder="Phone Number"
+            name="phone"
+            id="phone"
+          />
+          <label for="country"><b>Country</b></label>
+          <input
+            type="text"
+            placeholder="Country Name"
+            name="country"
+            id="country"
+          />
+          <label for="password"><b>Password</b></label>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            name="password"
+            id="password"
+          />
+
+          <button type="submit" class="registerbtn">Register</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
