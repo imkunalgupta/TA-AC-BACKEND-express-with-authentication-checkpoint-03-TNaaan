@@ -18,23 +18,22 @@
             <a href="/dashboard/logout">Logout</a>
           </li>
         </ul>
-        <p>Dashboard of <%= user.firstname %></p>
       </nav>
     </header>
     <main class="container">
-      <form action="/dashboard/search/" method="GET">
+      <form action="/dashboard/search" method="GET">
         <label for="category">By Expense: </label>
         <select name="expense" id="expense">
           <option value="">Filter By Expense</option>
           <% expense.forEach((i)=>{%>
-          <option value="<%= i %>"><%= i.category%></option>
+          <option value="<%= i.category %>"><%= i.category %></option>
           <% })%>
         </select>
         <label for="income">By Income: </label>
         <select name="income" id="income">
           <option value="">Filter By Income</option>
           <% income.forEach((e)=>{%>
-          <option value="<%=e%>"><%=e.source%></option>
+          <option value="<%= e.source %>"><%= e.source %></option>
           <% })%>
         </select>
         <label for="date">ByDate</label>

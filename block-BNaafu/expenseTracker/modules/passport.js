@@ -1,7 +1,8 @@
 var passport = require('passport');
+var User = require('../models/User');
+
 var GitHubStrategy = require('passport-github2').Strategy;
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
-var User = require('../models/User');
 
 passport.use(
   new GitHubStrategy(
@@ -46,7 +47,10 @@ passport.use(
     function (accessToken, refreshToken, profile, done) {
       console.log(profile.emails[0].value);
       var profileData = {
-        email: profile.emails[0].value,
+        name: profile.displayName,
+        username: profile._json.name,
+        email: profile._json.email,
+        profilePic: profile._json.picture,
       };
       User.findOne({ email: profile.emails[0].value }, (err, user) => {
         if (err) return done(err);
