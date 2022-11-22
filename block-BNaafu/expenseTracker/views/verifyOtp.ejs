@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+<main>
+  <section class="forgot-sec">
+    <div class="container flex justify-center-flex align-center">
+      <div class="flex-30">
+        <div>
+          <h3>
+            Check your email we have sent OTP for email verification and it will
+            vaild only for one minute
+          </h3>
+          <form action="/verifyEmail/<%= id %>/verifyOtp" method="POST">
+            <% if (error) { %>
+            <p><%= error %></p>
+            <% } %>
+            <input type="email" name="email" value="<%= data.email %>" />
+            <input
+              type="string"
+              required
+              id="email"
+              name="otp"
+              placeholder="enter your otp"
+            />
+            <button type="submit">verify Otp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<%- include('partials/footer') %>

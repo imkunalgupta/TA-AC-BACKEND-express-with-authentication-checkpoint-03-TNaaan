@@ -1,0 +1,126 @@
+<%- include('partials/header') %>
+<main>
+  <section>
+    <div class="container">
+      <h1>
+        Savings for the Month of <%= currentMonth %>:
+        <span><%= savings %></span>
+      </h1>
+    </div>
+  </section>
+  <section>
+    <div class="container flex space-between">
+      <div class="col-1">
+        <form
+          action="/clients/statementList/filterByDate"
+          class="filter"
+          method="GET"
+        >
+          <h2>Filter By Date</h2>
+          <input type="date" name="startDate" />
+          <input type="date" name="endDate" />
+          <input type="submit" value="Search" />
+        </form>
+        <form
+          action="/clients/statementList/filterByMonth"
+          class="filter"
+          method="GET"
+        >
+          <h2>Filter By Month</h2>
+          <input type="month" name="month" />
+          <input type="submit" value="search" />
+        </form>
+        <form
+          action="/clients/statementList/filterByDateAndCategory"
+          class="filter"
+          method="POST"
+        >
+          <h2>Filter By Date & Category</h2>
+          <input type="date" name="startDate" />
+          <input type="date" name="endDate" />
+          <input
+            type="text"
+            name="incSource"
+            placeholder="Income Source"
+            required
+          />
+          <input
+            type="text"
+            name="expCategory"
+            placeholder="Expense Category"
+            required
+          />
+          <input type="submit" value="search" />
+        </form>
+        <div class="reset">
+          <a href="/clients/statementList">Reset Filters</a>
+        </div>
+      </div>
+      <div class="col-2">
+        <% if(balance) {%>
+        <h2>
+          Savings of this particular search: <span> <%= balance %> </span>
+        </h2>
+        <% } else { %>
+        <div>
+          <% if(incomes.length > 0) {%>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Income</th>
+                  <th>Amount</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <% incomes.forEach((cv,i)=> { %>
+              <tbody>
+                <tr>
+                  <td><%= i+1 %></td>
+                  <td><%= cv.incname %></td>
+                  <td><%= cv.amount %></td>
+                  <td>
+                    <%= %>
+                    <a href="/income/<%= cv.id %>">Show Details </a>
+                  </td>
+                </tr>
+              </tbody>
+              <% }) %>
+            </table>
+          </div>
+          <% } %> <% if(expenses.length > 0) { %>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Expense</th>
+                <th>Amount</th>
+                <th></th>
+              </tr>
+            </thead>
+            <% expenses.forEach((cv,i)=> { %>
+            <tbody>
+              <tr>
+                <td><%= i+1 %></td>
+                <td><%= cv.expname %></td>
+                <td><%= cv.amount %></td>
+                <td>
+                  <%= %>
+                  <a href="/expense/<%= cv.id %>">Show Details </a>
+                </td>
+              </tr>
+            </tbody>
+            <% }) %>
+          </table>
+          <% } %>
+        </div>
+        <% if((expenses.length) === 0 && (incomes.length === 0)) { %>
+        <h1>No Records Available</h1>
+        <% } %> <% } %>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>

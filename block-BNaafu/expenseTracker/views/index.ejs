@@ -1,0 +1,14 @@
+<% include partials/header %>
+
+<main>
+  <div class="container center">
+    <h1>Welcome to Expense Tracker</h1>
+    <% if (user) { %>
+    <p class="start-btn"><a href="/users/dashboard">Get Started</a></p>
+    <% } %> <% if (!user) { %>
+    <p class="start-btn"><a href="/users/login">Get Started</a></p>
+    <% } %>
+  </div>
+</main>
+
+<% include partials/footer %>

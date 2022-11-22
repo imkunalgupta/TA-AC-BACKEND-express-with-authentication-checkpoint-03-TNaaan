@@ -7,7 +7,6 @@ var incomeSchema = new Schema(
     amount: { type: Number },
     date: { type: Date, default: Date() },
     userId: { type: Schema.Types.ObjectId, ref: 'User' },
-    income: { type: Schema.Types.ObjectId },
     type: { type: String, default: 'Income' },
   },
   { timestamps: true }

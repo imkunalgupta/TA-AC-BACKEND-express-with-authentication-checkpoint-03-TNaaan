@@ -93,12 +93,12 @@ router.get(
 // Logging in with google
 
 router.get(
-  '/auth/google',
+  '/google',
   passport.authenticate('google', { scope: ['email', 'profile'] })
 );
 
 router.get(
-  '/auth/google/callback',
+  '/google/callback',
   passport.authenticate('google', {
     failureRedirect: '/',
   }),
@@ -170,8 +170,8 @@ router.post('/dashboard/expense', (req, res, next) => {
 
 router.get('/dashboard/search', (req, res, next) => {
   var query = req.query;
-  var income = query.income;
-  console.log(res.locals.income, 'Locals');
+  console.log(res.query.income, 'Locals');
+  res.send('hello');
 });
 
 module.exports = router;

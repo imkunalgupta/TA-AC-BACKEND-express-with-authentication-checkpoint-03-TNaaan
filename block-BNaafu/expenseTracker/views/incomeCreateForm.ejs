@@ -1,0 +1,21 @@
+<% include partials/header %>
+
+<section>
+  <div class="container">
+    <div class="login-box">
+      <h1>Add Income</h1>
+      <form action="/clients/income" class="form" method="POST">
+        <% if(info) { %>
+        <legend><%= info %></legend>
+        <%} %>
+        <input type="text" placeholder="Income Name" name="incname" />
+        <input type="text" placeholder="Source" name="sources" />
+        <input type="number" placeholder="Amount" name="amount" />
+        <input type="date" name="date" />
+        <input type="submit" value="Add Income" />
+      </form>
+    </div>
+  </div>
+</section>
+
+<% include partials/footer %>

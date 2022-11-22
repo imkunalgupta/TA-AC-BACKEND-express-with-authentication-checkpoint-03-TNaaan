@@ -1,0 +1,48 @@
+<% include partials/header %>
+
+<main>
+  <section>
+    <div class="container">
+      <div class="login-box">
+        <h1>Login</h1>
+        <form action="/users/login" class="form" method="POST">
+          <% if (ep) { %>
+          <p><%= ep %></p>
+          <% } %> <% if (email) { %>
+          <p><%= email %></p>
+          <% } %> <% if (password) { %>
+          <p><%= password %></p>
+          <% } %>
+          <label for="text">Email</label>
+          <input
+            id="text"
+            type="email"
+            name="email"
+            placeholder="arya@stark.com"
+          />
+          <label for="text">Password</label>
+          <input
+            id="password"
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+          />
+          <input class="btn" type="submit" value="Login" />
+        </form>
+        <hr />
+        <div class="center forget">
+          <a href="/verifyEmail/forgot">Forget password ?</a>
+        </div>
+        <p class="center">
+          Don't have an account? <a href="/users/signup">Sign up</a>
+        </p>
+        <div class="github-box">
+          <a href="/auth/github">Login with Github</a>
+          <a href="/auth/google">Login with Google</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<% include partials/footer %>

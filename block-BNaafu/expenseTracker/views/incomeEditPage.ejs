@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+<main>
+  <section>
+    <div class="container">
+      <div class="login-box">
+        <h1>Update Income</h1>
+        <form action="/income/<%= income.id %>" class="form" method="POST">
+          <input
+            type="text"
+            name="incname"
+            placeholder="Enter Income Name"
+            value="<%= income.incname %>"
+          />
+          <input
+            type="text"
+            name="sources"
+            placeholder="Enter the Income Source"
+            value="<%= income.sources %>"
+          />
+          <input
+            type="number"
+            name="amount"
+            placeholder="Amount"
+            value="<%= income.amount %>"
+          />
+          <input type="date" name="date" value="<%= date %>" />
+          <input type="submit" value="Update Income" />
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>
