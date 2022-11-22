@@ -1,0 +1,273 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-size: 20px;
+  font-family: 'Baloo Tammudu 2', cursive;
+  vertical-align: middle;
+  background-color: #eaeded;
+}
+
+h1 {
+  margin: 1.2rem 0;
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+h4 {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+h5 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.btn-pri {
+  background-color: green;
+  color: wheat;
+}
+
+.btn-sec {
+  background-color: #d85151;
+  color: wheat;
+}
+
+.btn-ter {
+  background: linear-gradient(to bottom, #f7e1a7, #c79d32);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 1rem auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+input {
+  width: 100%;
+  padding: 0.3rem 0;
+  border-radius: 10px;
+  border: none;
+}
+input::placeholder {
+  padding-left: 0.5rem;
+  font-size: 1rem;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: linear-gradient(to top right, #f8c391, #ee9a4c);
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px #636161;
+}
+form > * {
+  margin: 0.5rem 0;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+h3 {
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+header {
+  padding: 1rem 0;
+  background-color: #6d6f72;
+}
+
+header a {
+  margin-right: 1rem;
+  color: aliceblue;
+}
+
+.filter-form {
+  width: 300px;
+}
+.filter-form input {
+  width: auto;
+}

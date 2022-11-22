@@ -1,0 +1,38 @@
+<% include partials/header %>
+
+<main>
+  <div class="login-box">
+    <h1>Create an account</h1>
+    <form
+      action="/users/signup"
+      class="form"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <p><%= exist %></p>
+      <p><%= min %></p>
+      <label for="name">First Name</label>
+      <input type="text" name="name" placeholder="First name" id="name" />
+      <label for="username"> Last Name</label>
+      <input type="text" name="username" placeholder=" Full name" />
+      <label for="email">Email</label>
+      <input type="email" name="email" placeholder="Enter email" />
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter your password"
+      />
+      <label for="age">Age</label>
+      <input type="number" name="age" placeholder="Enter your age" />
+      <label for="phone">Phone No.</label>
+      <input type="number" name="phone" placeholder="Enter your Phone no." />
+      <label for="country">Country</label>
+      <input type="text" name="country" placeholder="Enter your country" />
+      <input type="file" name="profilePic" placeholder="Add Profile image" />
+      <input class="submit-btn" type="submit" />
+    </form>
+  </div>
+</main>
+
+<% include partials/footer %>

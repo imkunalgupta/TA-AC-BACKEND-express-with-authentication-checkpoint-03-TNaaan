@@ -1,0 +1,12 @@
+<% include partials/header %>
+
+<div class="container">
+  <h1 class="text-3xl text-blue-600 text-center mb-5 mt-5">
+    Welcome to User Page
+  </h1>
+  <% users.forEach(user => { %>
+  <p><%= user.name %></p>
+  <% }) %>
+</div>
+
+<%- include('partials/footer') -%>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="flex justify-content align-item">
+        <ul class="flex expenses">
+          <li>
+            <a href="/dashboard/expense">Add Expenses</a>
+          </li>
+          <li>
+            <a href="/dashboard/income">Add Income</a>
+          </li>
+          <li>
+            <a href="/dashboard/logout">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <form action="/dashboard/search" method="GET">
+        <label for="category">By Expense: </label>
+        <select name="expense" id="expense">
+          <option value="">Filter By Expense</option>
+          <% expense.forEach((i)=>{%>
+          <option value="<%= i.category %>"><%= i.category %></option>
+          <% })%>
+        </select>
+        <label for="income">By Income: </label>
+        <select name="income" id="income">
+          <option value="">Filter By Income</option>
+          <% income.forEach((e)=>{%>
+          <option value="<%= e.source %>"><%= e.source %></option>
+          <% })%>
+        </select>
+        <label for="date">ByDate</label>
+        <select name="fdate" id="date">
+          <option value="">Select By Date</option>
+          <option value="latest">Latest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+        <button type="submit">Search</button>
+      </form>
+      <h1>Welcome to dashboard.</h1>
+      <div class="flex justify-content">
+        <div class="flex-60">
+          <% income.forEach((i) => { %>
+          <div class="income">
+            <span>Source: <%= i.source %></span>
+            <span>Amount:<%= i.amount %></span>
+            <span>Date:<%= i.date %></span>
+            <span>Type: <span class="green"><%= i.type %></span></span>
+          </div>
+          <% }) %> <% expense.forEach((i) => { %>
+          <div class="expense">
+            <span>Source: <%= i.category %></span>
+            <span>Amount:<%= i.amount %></span>
+            <span>Date:<%= i.date %></span>
+            <span>Type: <span class="red"><%= i.type %></span></span>
+          </div>
+          <% }) %>
+        </div>
+        <div><% console.log(data)%></div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<% include partials/header %>
+<main>
+  <section>
+    <div class="container flex justify-between-flex align-center">
+      <div class="font-0 flex-50">
+        <img
+          src="https://image.freepik.com/free-vector/man-checking-emails-smartphone-cartoon-people-illustration_241107-222.jpg"
+          alt=""
+          class="img"
+        />
+      </div>
+      <div class="flex-30">
+        <a href="/"></a>
+        <a href="/"></a>
+        <div>
+          <h3>
+            Check your email we have sent OTP for email verification and it will
+            vaild only for one minute
+          </h3>
+          <form action="/verifyEmail/<%= id %>/verifyOtp/forgot" method="POST">
+            <% if (error) { %>
+            <p><%= error %></p>
+            <% } %>
+            <input
+              type="email"
+              name="email"
+              value="<%= data.email %>"
+              class="form-control diseable"
+            />
+            <input
+              type="string"
+              required
+              id="email"
+              name="otp"
+              class="form-control"
+              placeholder="enter your otp"
+            />
+
+            <!-- <form action="/verifyEmail">
+                        <button type="submit">resend otp</button>
+                    </form> -->
+
+            <button type="submit" class="form-control">veryfy Otp</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<% include partials/footer %>
